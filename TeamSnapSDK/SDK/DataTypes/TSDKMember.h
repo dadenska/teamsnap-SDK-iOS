@@ -82,7 +82,7 @@
 #endif
 
 @property (readonly) NSString *fullName;
--(TSDKTeam *)team;
+@property (assign, nonatomic) TSDKTeam *team;
 @property (strong, nonatomic) NSMutableDictionary *contacts;
 @property (strong, nonatomic) NSMutableDictionary *emailAddresses;
 @property (strong, nonatomic) NSMutableDictionary *phoneNumbers;
