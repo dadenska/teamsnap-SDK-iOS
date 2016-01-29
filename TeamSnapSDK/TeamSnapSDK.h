@@ -31,7 +31,6 @@
 #import <TeamSnapSDK/TSDKAssignment.h>
 #import <TeamSnapSDK/TSDKAvailability.h>
 #import <TeamSnapSDK/TSDKBroadcastEmail.h>
-#import <TeamSnapSDK/TSDKBroadcastSms.h>
 #import <TeamSnapSDK/TSDKCustomDatum.h>
 #import <TeamSnapSDK/TSDKCustomField.h>
 #import <TeamSnapSDK/TSDKForumPost.h>

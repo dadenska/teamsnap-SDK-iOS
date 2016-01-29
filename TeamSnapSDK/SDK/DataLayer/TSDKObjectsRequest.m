@@ -25,7 +25,6 @@
 #import "NSDate+TSDKConveniences.h"
 #import "TSDKProfileTimer.h"
 #import "TSDKBroadcastEmail.h"
-#import "TSDKBroadcastSms.h"
 #import "TSDKCustomField.h"
 #import "TSDKCustomDatum.h"
 #import "TSDKForumTopic.h"
@@ -45,6 +44,7 @@
 #import "TSDKTeamSnap.h"
 #import "TSDKTeamResults.h"
 #import "TSDKinvitationFinder.h"
+#import "TSDKBroadcastAlert.h"
 
 static NSMutableArray *supportedSDKObjects;
 
