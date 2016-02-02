@@ -4,6 +4,7 @@
 #import <Foundation/Foundation.h>
 #import "TSDKCollectionObject.h"
 #import "TSDKObjectsRequest.h"
+@class TSDKMember;
 
 @interface TSDKBroadcastAlert : TSDKCollectionObject
 
@@ -17,6 +18,8 @@
 @property (nonatomic, assign)   NSInteger memberId; //Example: 993324
 @property (nonatomic, weak)     NSURL *linkTeam;
 @property (nonatomic, weak)     NSURL *linkMember;
+
+- (instancetype)initWithBody:(NSString *)body teamId:(NSInteger)teamId recipients:(NSArray <TSDKMember *>*)recipients sender:(TSDKMember *)sender NS_DESIGNATED_INITIALIZER;
 
 @end
 

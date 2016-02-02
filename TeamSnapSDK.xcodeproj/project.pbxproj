@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		560332A11C5C11E900E41F34 /* TSDKBroadcastAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 5603329F1C5C11E900E41F34 /* TSDKBroadcastAlert.h */; };
+		560332A11C5C11E900E41F34 /* TSDKBroadcastAlert.h in Headers */ = {isa = PBXBuildFile; fileRef = 5603329F1C5C11E900E41F34 /* TSDKBroadcastAlert.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		560332A21C5C11E900E41F34 /* TSDKBroadcastAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 560332A01C5C11E900E41F34 /* TSDKBroadcastAlert.m */; };
 		56458AA31C49723D007EE9B8 /* TSDKConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 56458AA11C49723D007EE9B8 /* TSDKConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56458AA41C49723D007EE9B8 /* TSDKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 56458AA21C49723D007EE9B8 /* TSDKConstants.m */; };
@@ -608,7 +608,6 @@
 				969E80F91BAAE7AB00CA518F /* TSDKUser.h in Headers */,
 				969E80CF1BAAE7AB00CA518F /* TSDKStatisticGroup.h in Headers */,
 				969E80F11BAAE7AB00CA518F /* TSDKTeamFee.h in Headers */,
-				560332A11C5C11E900E41F34 /* TSDKBroadcastAlert.h in Headers */,
 				9627ECB01C1EFDC100D669E7 /* TSDKProcessBulkObjectProtocol.h in Headers */,
 				969E80CB1BAAE7AB00CA518F /* TSDKStatistic.h in Headers */,
 				969E80CD1BAAE7AB00CA518F /* TSDKStatisticDatum.h in Headers */,
@@ -638,6 +637,7 @@
 				969E80C71BAAE7AB00CA518F /* TSDKObjectsRequest.h in Headers */,
 				56458AA31C49723D007EE9B8 /* TSDKConstants.h in Headers */,
 				964CDDED1BB4519400909D11 /* TSDKPublicFeatures.h in Headers */,
+				560332A11C5C11E900E41F34 /* TSDKBroadcastAlert.h in Headers */,
 				969E80C11BAAE7AB00CA518F /* NSString+TSDKConveniences.h in Headers */,
 				969E80FE1BAAE7B500CA518F /* TSDKProfileTimer.h in Headers */,
 				964CDDE91BB4514B00909D11 /* TSDKTslPhotos.h in Headers */,

@@ -229,7 +229,7 @@
     self.sortedMembers = nil;
 }
 
-- (NSArray *)sortedMembers {
+- (NSArray <TSDKMember *>*)sortedMembers {
     if (!_sortedMembers) {
         _sortedMembers = [NSMutableArray arrayWithArray:[_members allValues]];
         [_sortedMembers sortUsingComparator:^NSComparisonResult(TSDKMember *member1, TSDKMember *member2) {

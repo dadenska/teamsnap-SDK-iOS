@@ -116,7 +116,7 @@
 - (void)addMember:(TSDKMember *)member;
 - (TSDKMember *)memberWithID:(NSInteger)memberId;
 - (NSArray *)membersWithUserId:(NSInteger)userId;
-- (NSArray *)sortedMembers;
+- (NSArray <TSDKMember *> *)sortedMembers;
 - (void)bulkLoadDataWithTypes:(NSArray *)dataTypes withCompletion:(TSDKArrayCompletionBlock)completion;
 - (void)membersWithCompletion:(TSDKArrayCompletionBlock)completion;
 - (void)allEventsWithCompletion:(TSDKArrayCompletionBlock)completion;
