@@ -11,6 +11,8 @@
 		560332A21C5C11E900E41F34 /* TSDKBroadcastAlert.m in Sources */ = {isa = PBXBuildFile; fileRef = 560332A01C5C11E900E41F34 /* TSDKBroadcastAlert.m */; };
 		56458AA31C49723D007EE9B8 /* TSDKConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 56458AA11C49723D007EE9B8 /* TSDKConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56458AA41C49723D007EE9B8 /* TSDKConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 56458AA21C49723D007EE9B8 /* TSDKConstants.m */; };
+		56C7BC6D1C614D91003A2BA6 /* TSDKSentMessage.h in Headers */ = {isa = PBXBuildFile; fileRef = 56C7BC6B1C614D91003A2BA6 /* TSDKSentMessage.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		56C7BC6E1C614D91003A2BA6 /* TSDKSentMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = 56C7BC6C1C614D91003A2BA6 /* TSDKSentMessage.m */; };
 		960107031BE92F5B005C4A57 /* TSDKCompletionBlockTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 960107001BE92DD5005C4A57 /* TSDKCompletionBlockTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		960107041BE92F5D005C4A57 /* TSDKCompletionBlockTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 960107001BE92DD5005C4A57 /* TSDKCompletionBlockTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		960556D21BE15F87003AB59D /* TSDKinvitationFinder.h in Headers */ = {isa = PBXBuildFile; fileRef = 960556D01BE15F87003AB59D /* TSDKinvitationFinder.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -228,6 +230,8 @@
 		560332A01C5C11E900E41F34 /* TSDKBroadcastAlert.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSDKBroadcastAlert.m; sourceTree = "<group>"; };
 		56458AA11C49723D007EE9B8 /* TSDKConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDKConstants.h; sourceTree = "<group>"; };
 		56458AA21C49723D007EE9B8 /* TSDKConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSDKConstants.m; sourceTree = "<group>"; };
+		56C7BC6B1C614D91003A2BA6 /* TSDKSentMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TSDKSentMessage.h; sourceTree = "<group>"; };
+		56C7BC6C1C614D91003A2BA6 /* TSDKSentMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSDKSentMessage.m; sourceTree = "<group>"; };
 		960107001BE92DD5005C4A57 /* TSDKCompletionBlockTypes.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TSDKCompletionBlockTypes.h; sourceTree = "<group>"; };
 		960556D01BE15F87003AB59D /* TSDKinvitationFinder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = TSDKinvitationFinder.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
 		960556D11BE15F87003AB59D /* TSDKinvitationFinder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TSDKinvitationFinder.m; sourceTree = "<group>"; };
@@ -507,6 +511,8 @@
 				969E808E1BAAE7AB00CA518F /* TSDKBroadcastEmail.m */,
 				5603329F1C5C11E900E41F34 /* TSDKBroadcastAlert.h */,
 				560332A01C5C11E900E41F34 /* TSDKBroadcastAlert.m */,
+				56C7BC6B1C614D91003A2BA6 /* TSDKSentMessage.h */,
+				56C7BC6C1C614D91003A2BA6 /* TSDKSentMessage.m */,
 				969E80911BAAE7AB00CA518F /* TSDKCustomDatum.h */,
 				969E80921BAAE7AB00CA518F /* TSDKCustomDatum.m */,
 				969E80931BAAE7AB00CA518F /* TSDKCustomField.h */,
@@ -638,6 +644,7 @@
 				56458AA31C49723D007EE9B8 /* TSDKConstants.h in Headers */,
 				964CDDED1BB4519400909D11 /* TSDKPublicFeatures.h in Headers */,
 				560332A11C5C11E900E41F34 /* TSDKBroadcastAlert.h in Headers */,
+				56C7BC6D1C614D91003A2BA6 /* TSDKSentMessage.h in Headers */,
 				969E80C11BAAE7AB00CA518F /* NSString+TSDKConveniences.h in Headers */,
 				969E80FE1BAAE7B500CA518F /* TSDKProfileTimer.h in Headers */,
 				964CDDE91BB4514B00909D11 /* TSDKTslPhotos.h in Headers */,
@@ -895,6 +902,7 @@
 				969E80F81BAAE7AB00CA518F /* TSDKTrackedItemStatus.m in Sources */,
 				969E80DC1BAAE7AB00CA518F /* TSDKCustomDatum.m in Sources */,
 				969E80C21BAAE7AB00CA518F /* NSString+TSDKConveniences.m in Sources */,
+				56C7BC6E1C614D91003A2BA6 /* TSDKSentMessage.m in Sources */,
 				560332A21C5C11E900E41F34 /* TSDKBroadcastAlert.m in Sources */,
 				965B7D3B1C18CA80009AF13E /* TSDKContact.m in Sources */,
 				969E80EE1BAAE7AB00CA518F /* TSDKSport.m in Sources */,
