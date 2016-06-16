@@ -152,7 +152,7 @@
 		969E80B61BAAE7AB00CA518F /* TSDKCollectionJSON.m in Sources */ = {isa = PBXBuildFile; fileRef = 969E80681BAAE7AB00CA518F /* TSDKCollectionJSON.m */; };
 		969E80B71BAAE7AB00CA518F /* TSDKCollectionObject.h in Headers */ = {isa = PBXBuildFile; fileRef = 969E80691BAAE7AB00CA518F /* TSDKCollectionObject.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		969E80B81BAAE7AB00CA518F /* TSDKCollectionObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 969E806A1BAAE7AB00CA518F /* TSDKCollectionObject.m */; };
-		969E80B91BAAE7AB00CA518F /* NSDate+TSDKConveniences.h in Headers */ = {isa = PBXBuildFile; fileRef = 969E806C1BAAE7AB00CA518F /* NSDate+TSDKConveniences.h */; };
+		969E80B91BAAE7AB00CA518F /* NSDate+TSDKConveniences.h in Headers */ = {isa = PBXBuildFile; fileRef = 969E806C1BAAE7AB00CA518F /* NSDate+TSDKConveniences.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		969E80BA1BAAE7AB00CA518F /* NSDate+TSDKConveniences.m in Sources */ = {isa = PBXBuildFile; fileRef = 969E806D1BAAE7AB00CA518F /* NSDate+TSDKConveniences.m */; };
 		969E80BB1BAAE7AB00CA518F /* NSMutableDictionary+integerKey.h in Headers */ = {isa = PBXBuildFile; fileRef = 969E806E1BAAE7AB00CA518F /* NSMutableDictionary+integerKey.h */; };
 		969E80BC1BAAE7AB00CA518F /* NSMutableDictionary+integerKey.m in Sources */ = {isa = PBXBuildFile; fileRef = 969E806F1BAAE7AB00CA518F /* NSMutableDictionary+integerKey.m */; };
@@ -963,6 +963,7 @@
 				563E3EFB1CD13A9200B0F1FF /* TSDKMessageRecipient.h in Headers */,
 				5699E27A1C90A6EE0061EC1D /* TSDKMessage.h in Headers */,
 				5645E4A81CD1514B00FCA40B /* TSDKMessageSender.h in Headers */,
+				969E80B91BAAE7AB00CA518F /* NSDate+TSDKConveniences.h in Headers */,
 				964CDDED1BB4519400909D11 /* TSDKPublicFeatures.h in Headers */,
 				969E80C11BAAE7AB00CA518F /* NSString+TSDKConveniences.h in Headers */,
 				969E80FE1BAAE7B500CA518F /* TSDKProfileTimer.h in Headers */,
@@ -972,7 +973,6 @@
 				96F7C5291D104A920022FA4C /* TSDKMemberPhoto.h in Headers */,
 				969E80B11BAAE7AB00CA518F /* TSPCache.h in Headers */,
 				969E80B31BAAE7AB00CA518F /* TSDKCollectionCommand.h in Headers */,
-				969E80B91BAAE7AB00CA518F /* NSDate+TSDKConveniences.h in Headers */,
 				964CDDE71BB4514B00909D11 /* TSDKRootLinks.h in Headers */,
 				969E80C31BAAE7AB00CA518F /* NSHTTPURLResponse+convenience.h in Headers */,
 				969E80BD1BAAE7AB00CA518F /* NSMutableURLRequest+TSDKConveniences.h in Headers */,

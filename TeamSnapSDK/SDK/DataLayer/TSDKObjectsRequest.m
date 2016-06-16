@@ -109,14 +109,21 @@ static NSArray *knownCompletionTypes;
     }];
 }
 
-+ (void)bulkLoadTeamData:(TSDKTeam *)team types:(NSArray *)objectDataTypes completion:(TSDKArrayCompletionBlock)completion {
++ (void)bulkLoadTeamData:(TSDKTeam *)team types:(NSArray *)objectDataTypes urlParameters:(NSDictionary *)urlParameters completion:(TSDKArrayCompletionBlock)completion {
     if (!objectDataTypes) {
         objectDataTypes = @[[TSDKEvent class], [TSDKMember class]];
     }
     
     NSArray *stringDataTypes = [self objectTypeStringsFromClasses:objectDataTypes];
     
-    NSURL *bulkTeamURL = [TSDKDataRequest appendPathToBaseURL:[NSString stringWithFormat:@"bulk_load?team_id=%ld&types=%@", (long)team.objectIdentifier, [stringDataTypes componentsJoinedByString:@","]]];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:[TSDKDataRequest appendPathToBaseURL:[NSString stringWithFormat:@"bulk_load?team_id=%ld&types=%@", (long)team.objectIdentifier, [stringDataTypes componentsJoinedByString:@","]]] resolvingAgainstBaseURL:NO];
+    NSMutableArray *queryItems = [NSMutableArray array];
+    for (NSString *key in urlParameters) {
+        [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:urlParameters[key]]];
+    }
+    components.queryItems = queryItems;
+    
+    NSURL *bulkTeamURL = components.URL;
     
     [TSDKDataRequest requestObjectsForPath:bulkTeamURL withConfiguration:[TSDKRequestConfiguration forceReload:YES] completion:^(BOOL success, BOOL complete, TSDKCollectionJSON *objects, NSError *error) {
         NSArray *parsedObjects;
@@ -135,14 +142,23 @@ static NSArray *knownCompletionTypes;
 }
 
 
-+ (void)bulkLoadTeamDataForTeamIds:(NSArray *)teamIds types:(NSArray *)objectDataTypes completion:(TSDKArrayCompletionBlock)completion {
++ (void)bulkLoadTeamDataForTeamIds:(NSArray *)teamIds types:(NSArray *)objectDataTypes urlParameters:(NSDictionary *)urlParameters completion:(TSDKArrayCompletionBlock)completion {
     if (!objectDataTypes) {
         objectDataTypes = @[[TSDKEvent class], [TSDKMember class]];
     }
     
     NSArray *stringDataTypes = [self objectTypeStringsFromClasses:objectDataTypes];
     
-    NSURL *bulkTeamURL = [TSDKDataRequest appendPathToBaseURL:[NSString stringWithFormat:@"bulk_load?team_id=%@&types=%@", [teamIds componentsJoinedByString:@","], [stringDataTypes componentsJoinedByString:@","]]];
+    NSURLComponents *components = [NSURLComponents componentsWithURL:[TSDKDataRequest appendPathToBaseURL:@"bulk_load"] resolvingAgainstBaseURL:YES];
+    NSMutableArray *queryItems = [NSMutableArray array];
+    [queryItems addObject:[NSURLQueryItem queryItemWithName:@"team_id" value:[teamIds componentsJoinedByString:@","]]];
+    [queryItems addObject:[NSURLQueryItem queryItemWithName:@"types" value:[stringDataTypes componentsJoinedByString:@","]]];
+    for (NSString *key in urlParameters) {
+        [queryItems addObject:[NSURLQueryItem queryItemWithName:key value:urlParameters[key]]];
+    }
+    components.queryItems = queryItems;
+    
+    NSURL *bulkTeamURL = components.URL;
     
     [TSDKDataRequest requestObjectsForPath:bulkTeamURL withConfiguration:[TSDKRequestConfiguration forceReload:YES] completion:^(BOOL success, BOOL complete, TSDKCollectionJSON *objects, NSError *error) {
         NSArray *parsedObjects;

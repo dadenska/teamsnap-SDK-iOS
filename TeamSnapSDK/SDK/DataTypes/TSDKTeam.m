@@ -286,7 +286,7 @@
 
 - (void)bulkLoadDataWithTypes:(NSArray *)dataTypes withConfiguration:(TSDKRequestConfiguration *)configuration completion:(TSDKArrayCompletionBlock)completion {
     if (dataTypes.count>0) {
-        [TSDKObjectsRequest bulkLoadTeamData:self types:dataTypes completion:^(BOOL success, BOOL complete, NSArray *objects, NSError *error) {
+        [TSDKObjectsRequest bulkLoadTeamData:self types:dataTypes urlParameters:nil completion:^(BOOL success, BOOL complete, NSArray *objects, NSError *error) {
             if (completion) {
                 completion(success, complete, objects, error);
             }

@@ -151,8 +151,8 @@
     }];
 }
 
-- (void)bulkLoadDataTypes:(NSArray *)objectDataTypes forTeamIds:(NSArray *)teamIds withConfiguration:(TSDKRequestConfiguration *)configuration completion:(TSDKArrayCompletionBlock)completion {
-    [TSDKObjectsRequest bulkLoadTeamDataForTeamIds:teamIds types:objectDataTypes completion:^(BOOL success, BOOL complete, NSArray *objects, NSError *error) {
+- (void)bulkLoadDataTypes:(NSArray *)objectDataTypes forTeamIds:(NSArray *)teamIds urlParameters:(NSDictionary *)urlParameters withConfiguration:(TSDKRequestConfiguration *)configuration completion:(TSDKArrayCompletionBlock)completion {
+    [TSDKObjectsRequest bulkLoadTeamDataForTeamIds:teamIds types:objectDataTypes urlParameters:urlParameters completion:^(BOOL success, BOOL complete, NSArray *objects, NSError *error) {
         if (completion) {
             completion(success, complete, objects, error);
         }
@@ -179,11 +179,11 @@
     }];
 }
 
-- (void)bulkLoadDataTypes:(NSArray *)objectDataTypes withConfiguration:(TSDKRequestConfiguration *)configuration completion:(TSDKArrayCompletionBlock)completion {
+- (void)bulkLoadDataTypes:(NSArray *)objectDataTypes urlParameters:(NSDictionary *)urlParameters withConfiguration:(TSDKRequestConfiguration *)configuration completion:(TSDKArrayCompletionBlock)completion {
     __typeof__(self) __weak weakSelf = self;
     
     [self teamIdsForAllMyTeamsWithConfiguration:configuration completion:^(BOOL success, BOOL complete, NSArray *teamIds, NSError *error) {
-        [TSDKObjectsRequest bulkLoadTeamDataForTeamIds:teamIds types:objectDataTypes completion:^(BOOL success, BOOL complete, NSArray *objects, NSError *error) {
+        [TSDKObjectsRequest bulkLoadTeamDataForTeamIds:teamIds types:objectDataTypes urlParameters:urlParameters completion:^(BOOL success, BOOL complete, NSArray *objects, NSError *error) {
             if(success) {
                 for (TSDKCollectionObject *object in objects) {
                     if ([object isKindOfClass:[TSDKTeam class]]) {
@@ -201,7 +201,7 @@
 }
 
 - (void)loadTeamOverviewForMyTeamsWithConfiguration:(TSDKRequestConfiguration *)configuration completion:(TSDKArrayCompletionBlock)completion {
-    [self bulkLoadDataTypes:@[[TSDKTeam class], [TSDKTeamPreferences class], [TSDKTeamResults class], [TSDKPlan class]] withConfiguration:configuration completion:^(BOOL success, BOOL complete, NSArray *objects, NSError *error) {
+    [self bulkLoadDataTypes:@[[TSDKTeam class], [TSDKTeamPreferences class], [TSDKTeamResults class], [TSDKPlan class]]  urlParameters:nil withConfiguration:configuration completion:^(BOOL success, BOOL complete, NSArray *objects, NSError *error) {
         
         NSIndexSet *indexes = [objects indexesOfObjectsPassingTest:^BOOL(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
             return [obj isKindOfClass:[TSDKTeam class]];

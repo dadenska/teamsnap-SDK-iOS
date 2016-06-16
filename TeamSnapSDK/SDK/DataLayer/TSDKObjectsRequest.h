@@ -17,8 +17,8 @@
 @interface TSDKObjectsRequest : NSObject
 
 + (void)listTeams:(NSArray *)teamIds WithConfiguration:(TSDKRequestConfiguration *)configuration completion:(TSDKTeamArrayCompletionBlock)completion;
-+ (void)bulkLoadTeamData:(TSDKTeam *)team types:(NSArray *)objectDataTypes completion:(TSDKArrayCompletionBlock)completion;
-+ (void)bulkLoadTeamDataForTeamIds:(NSArray *)teamIds types:(NSArray *)objectDataTypes completion:(TSDKArrayCompletionBlock)completion;
++ (void)bulkLoadTeamData:(TSDKTeam *)team types:(NSArray *)objectDataTypes urlParameters:(NSDictionary *)urlParameters completion:(TSDKArrayCompletionBlock)completion;
++ (void)bulkLoadTeamDataForTeamIds:(NSArray *)teamIds types:(NSArray *)objectDataTypes urlParameters:(NSDictionary *)urlParameters completion:(TSDKArrayCompletionBlock)completion;
 + (void)listEventsForTeam:(TSDKTeam *)team startDate:(NSDate *)startDate endDate:(NSDate *)endDate completion:(TSDKArrayCompletionBlock)completion;
 + (void)invitationStatusForEmailAddress:(NSString *)emailAddress withCompletion:(TSDKInviteStatusCompletionBlock)completionBlock;
 + (TSDKUser *)processLoginCollectionJSON:(TSDKCollectionJSON *)containerCollection;
