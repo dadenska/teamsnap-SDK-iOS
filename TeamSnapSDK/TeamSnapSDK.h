@@ -80,3 +80,4 @@
 #import <TeamSnapSDK/TSDKMessageSender.h>
 #import <TeamSnapSDK/TSDKMemberPhoto.h>
 #import <TeamsnapSDK/TSDKBackgroundUploadProgressMonitorDelegate.h>
+#import <TeamsnapSDK/TSDKProfile.h>
