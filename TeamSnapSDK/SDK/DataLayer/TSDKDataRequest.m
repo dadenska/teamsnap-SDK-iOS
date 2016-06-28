@@ -21,7 +21,7 @@
 #import "TSDKBackgroundUploadProgressMonitorDelegate.h"
 #import "TSDKDuplicateCompletionBlockStore.h"
 
-static NSString *baseURL = @"https://api.teamsnap.com/v3/";
+static NSString *baseURL = @"https://pod-profiles.teamsnap.com:3000/v3/";
 static NSString *OauthURL = @"https://cogsworth.teamsnap.com/oauth/token";
 static NSString *clientId;
 static NSString *clientSecret;

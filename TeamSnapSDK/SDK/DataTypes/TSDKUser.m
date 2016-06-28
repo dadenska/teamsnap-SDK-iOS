@@ -29,6 +29,10 @@
     return @"user";
 }
 
+- (BOOL)logHeader {
+    return YES;
+}
+
 + (void)actionSendTrialExpiringReminderForCurrentUserWithCompletion:(TSDKSimpleCompletionBlock)completion {
     TSDKCollectionCommand *command = [self commandForKey:@"send_trial_expiring_reminder"];
     [command executeWithCompletion:^(BOOL success, BOOL complete, TSDKCollectionJSON *objects, NSError *error) {
