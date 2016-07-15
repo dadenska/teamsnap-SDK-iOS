@@ -10,6 +10,8 @@
 #import "TSDKOpponent.h"
 #import "NSString+TSDKConveniences.h"
 
+#define propertyKeyPathLastComponent(property) [[(@""#property) componentsSeparatedByString:@"."] lastObject]
+
 @implementation TSDKEvent {
 
 }
@@ -32,7 +34,7 @@
 
 - (NSDate *)startDate {
     if(!_startDate) {
-        NSString *dateString = self.collection.data[[NSStringFromSelector(@selector(startDate)) camelCaseToUnderscores]];
+        NSString *dateString = self.collection.data[[propertyKeyPathLastComponent(self.startDate) camelCaseToUnderscores]];
         
         if ([dateString length]>10) {
             _startDate = [dateString dateFromRCF3339DateTimeString];
