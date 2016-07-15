@@ -8,13 +8,15 @@
 #import "TSDKAvailabilityGroups.h"
 #import "TSDKMember.h"
 #import "TSDKOpponent.h"
-
+#import "NSString+TSDKConveniences.h"
 
 @implementation TSDKEvent {
 
 }
 
-@dynamic uniform, teamId, iconColor, createdAt, opponentId, isGame, label, gameType, shootoutPointsForTeam, shootoutPointsForOpponent, timeZoneDescription, tracksAvailability, isCanceled, sourceTimeZoneIanaName, divisionLocationId, additionalLocationDetails, endDate, isTbd, resultsUrl, isLeagueControlled, name, repeatingType, isShootout, pointsForTeam, locationId, minutesToArriveEarly, formattedResults, repeatingTypeCode, startDate, doesntCountTowardsRecord, timeZone, pointsForOpponent, gameTypeCode, timeZoneOffset, arrivalDate, updatedAt, isOvertime, repeatingUuid, results, notes, timeZoneIanaName, durationInMinutes, linkAvailabilities, linkLocation, linkEventStatistics, linkDivisionLocation, linkAssignments, linkOpponent, linkTeam, linkStatisticData, linkCalendarSingleEvent;
+@dynamic uniform, teamId, iconColor, createdAt, opponentId, isGame, label, gameType, shootoutPointsForTeam, shootoutPointsForOpponent, timeZoneDescription, tracksAvailability, isCanceled, sourceTimeZoneIanaName, divisionLocationId, additionalLocationDetails, endDate, isTbd, resultsUrl, isLeagueControlled, name, repeatingType, isShootout, pointsForTeam, locationId, minutesToArriveEarly, formattedResults, repeatingTypeCode, doesntCountTowardsRecord, timeZone, pointsForOpponent, gameTypeCode, timeZoneOffset, arrivalDate, updatedAt, isOvertime, repeatingUuid, results, notes, timeZoneIanaName, durationInMinutes, linkAvailabilities, linkLocation, linkEventStatistics, linkDivisionLocation, linkAssignments, linkOpponent, linkTeam, linkStatisticData, linkCalendarSingleEvent;
+
+@synthesize startDate = _startDate;
 
 + (NSString *)SDKType {
     return @"event";
@@ -28,6 +30,23 @@
     return self;
 }
 
+- (NSDate *)startDate {
+    if(!_startDate) {
+        NSString *dateString = self.collection.data[[NSStringFromSelector(@selector(startDate)) camelCaseToUnderscores]];
+        
+        if ([dateString length]>10) {
+            _startDate = [dateString dateFromRCF3339DateTimeString];
+        } else {
+            _startDate = [dateString dateFromJustDate];
+        }
+    }
+    return _startDate;
+}
+
+- (void)setStartDate:(NSDate *)startDate {
+    _startDate = startDate;
+    [self setDate:startDate forKey:[NSStringFromSelector(@selector(startDate)) camelCaseToUnderscores]];
+}
 
 +(void)actionUpdateFinalScoreForEvent:(TSDKEvent *)event completion:(TSDKCompletionBlock)completion {
     if (event) {

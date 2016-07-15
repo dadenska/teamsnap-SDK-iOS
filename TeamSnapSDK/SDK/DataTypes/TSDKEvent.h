@@ -36,7 +36,7 @@
 @property (nonatomic, assign) NSInteger minutesToArriveEarly; //Example: 0
 @property (nonatomic, weak) NSString *formattedResults; //Example: **NULL**
 @property (nonatomic, weak) NSString *repeatingTypeCode; //Example: **NULL**
-@property (nonatomic, weak) NSDate *startDate; //Example: 2012-05-19T04:00:00Z
+@property (nonatomic, strong) NSDate *startDate; //Example: 2012-05-19T04:00:00Z
 @property (nonatomic, assign) NSInteger doesntCountTowardsRecord; //Example: 1
 @property (nonatomic, weak) NSString *timeZone; //Example: Eastern Time (US & Canada)
 @property (nonatomic, assign) NSInteger pointsForOpponent; //Example: **NULL**
