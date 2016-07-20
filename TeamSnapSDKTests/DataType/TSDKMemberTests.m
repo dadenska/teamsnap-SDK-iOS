@@ -76,4 +76,21 @@
     XCTAssertEqualObjects(@"101 Main Street\nBoulder, 27526", member.fancyAddressString);
     
 }
+
+- (void)testBirthDate {
+    
+    TSDKMember *member = nil;
+    XCTAssertTrue((member.age == 0));
+    
+    member = [[TSDKMember alloc] init];
+    
+    XCTAssertTrue((member.age == 0));
+    
+    member.birthday = [NSDate dateWithTimeIntervalSinceNow:10*(-366 * 24 * 3600)];
+    XCTAssertTrue((member.age == 10));
+    
+    [[[member collection] data] setObject:[NSNull null] forKey:@"birthday"];
+    XCTAssertTrue((member.age == 0));
+
+}
 @end
