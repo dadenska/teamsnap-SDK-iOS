@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface TSDKCollectionJSON : NSObject <NSCoding>
+@interface TSDKCollectionJSON : NSObject <NSCoding, NSCopying>
 
 @property (nonatomic, strong) NSURL *href;
 @property (nonatomic, strong) NSString *version;

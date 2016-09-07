@@ -270,4 +270,24 @@
     [coder encodeObject:_collection forKey:@"collection"];
 }
 
+- (id)copyWithZone:(nullable NSZone *)zone {
+    TSDKCollectionJSON *newCopy = [[[self class] allocWithZone:zone] init];
+    newCopy.href = [_href copyWithZone:zone];
+    newCopy.version = [_version copyWithZone:zone];
+    newCopy.type = [_type copyWithZone:zone];
+    newCopy.rel = [_rel copyWithZone:zone];
+    newCopy.errorTitle = [_errorTitle copyWithZone:zone];
+    newCopy.errorMessage = [_errorMessage copyWithZone:zone];
+    newCopy.errorCode = self.errorCode;
+    newCopy.links = [_links copyWithZone:zone];
+    newCopy.data = [_data copyWithZone:zone];
+    newCopy.commands = [_commands copyWithZone:zone];
+    if([_collection respondsToSelector:@selector(copyWithZone:)]) {
+        newCopy.collection = [_collection copyWithZone:zone];
+    } else {
+        newCopy.collection = _collection;
+    }
+    return newCopy;
+}
+
 @end
