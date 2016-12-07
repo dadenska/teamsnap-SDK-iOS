@@ -359,7 +359,11 @@
 + (void)loginWithUser:(NSString *)aUsername password:(NSString *)aPassword onCompletion:(TSDKLoginCompletionBlock)completion {
     [[TSDKTeamSnap sharedInstance] rootLinksWithConfiguration:[TSDKRequestConfiguration defaultRequestConfiguration] completion:^(TSDKRootLinks *rootLinks) {
         if (rootLinks) {
-            NSURL *oauthURL = [[rootLinks linkAuthorization] URLByAppendingPathComponent:@"oauth/token"];
+            NSURL *authorizationBaseURL = [rootLinks linkAuthorization];
+            if(authorizationBaseURL == nil || authorizationBaseURL.absoluteString.length == 0) {
+                authorizationBaseURL = [NSURL URLWithString:@"https://pod-pla-88-tsl-metadata-json.teamsnap.com:8443"];
+            }
+            NSURL *oauthURL = [authorizationBaseURL URLByAppendingPathComponent:[rootLinks linkAuthorizationTokens].absoluteString];
             NSString *scopes = @"read write";
             
             NSDictionary *envelope = [NSDictionary dictionaryWithObjects:@[@"password", aUsername, aPassword, [[TSDKTeamSnap sharedInstance] clientId], [[TSDKTeamSnap sharedInstance] clientSecret], scopes] forKeys:@[@"grant_type", @"username", @"password", @"client_id", @"client_secret", @"scope"]];
