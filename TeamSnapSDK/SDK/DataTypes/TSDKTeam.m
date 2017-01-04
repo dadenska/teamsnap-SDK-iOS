@@ -260,8 +260,16 @@
     TSDKCollectionQuery *queryCommand = [TSDKCollectionObject queryForClass:[TSDKTeam SDKType] forKey:@"division_search"];
     if (queryCommand && [[TSDKTeamSnap sharedInstance] clientId]) {
         queryCommand.data[@"division_id"] = divisionId;
-        queryCommand.data[@"is_active"] = @(isActive);
-        queryCommand.data[@"is_commissioner"] = @(isCommissioner);
+        if (isActive) {
+            queryCommand.data[@"is_active"] = @"true";
+        } else {
+            queryCommand.data[@"is_active"] = @"false";
+        }
+        if (isCommissioner) {
+            queryCommand.data[@"is_commissioner"] = @"true";
+        } else {
+            queryCommand.data[@"is_commissioner"] = @"false";
+        }
         queryCommand.data[@"page_number"] = @(pageNumber);
         queryCommand.data[@"page_size"] = @(pageSize);
         
