@@ -50,7 +50,7 @@
     return self;
 }
 
-- (instancetype)initWithBody:(NSString *)body subject:(NSString *)subject teamId:(NSString *_Nonnull)teamId recipients:(NSArray <TSDKMember *>*)recipients sender:(id<TSDKMessageSender>)sender isDraft:(BOOL)isDraft {
+- (instancetype)initWithBody:(NSString *)body subject:(NSString *)subject teamId:(NSString *_Nonnull)teamId recipients:(NSArray <TSDKMember *>*)recipients sender:(id<TSDKMessageSender>)sender isDraft:(BOOL)isDraft isLeague:(BOOL)isLeague {
     self = [super init];
     if(self) {
         [super setString:body forKey:@"body"];
@@ -65,6 +65,7 @@
             [recipientIDs addObject:recipient.objectIdentifier];
         }
         [super setBool:isDraft forKey:@"is_draft"];
+        [super setBool:isLeague forKey:@"is_league"];
         
         [super setArray:recipientIDs forKey:@"recipient_ids"];
     }
