@@ -32,7 +32,7 @@
 		569CFAC11D1DB06400CD6772 /* NSDateFormatter+TSDKConvenience.m in Sources */ = {isa = PBXBuildFile; fileRef = 569CFABF1D1DB06400CD6772 /* NSDateFormatter+TSDKConvenience.m */; };
 		56BE66131DF5D0CB000AC02D /* TSDKSmsGateway.h in Headers */ = {isa = PBXBuildFile; fileRef = 56BE66111DF5D0CB000AC02D /* TSDKSmsGateway.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56BE66141DF5D0CB000AC02D /* TSDKSmsGateway.m in Sources */ = {isa = PBXBuildFile; fileRef = 56BE66121DF5D0CB000AC02D /* TSDKSmsGateway.m */; };
-		56DFC4081E9EBCA7008F5891 /* TSDKMutableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 56DFC4061E9EBCA7008F5891 /* TSDKMutableDictionary.h */; };
+		56DFC4081E9EBCA7008F5891 /* TSDKMutableDictionary.h in Headers */ = {isa = PBXBuildFile; fileRef = 56DFC4061E9EBCA7008F5891 /* TSDKMutableDictionary.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		56DFC4091E9EBCA7008F5891 /* TSDKMutableDictionary.m in Sources */ = {isa = PBXBuildFile; fileRef = 56DFC4071E9EBCA7008F5891 /* TSDKMutableDictionary.m */; };
 		56E7BA351DFB1BBF00FB1BD6 /* TSDKShortPropertyTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 56E7BA311DFB175500FB1BD6 /* TSDKShortPropertyTest.m */; };
 		960107031BE92F5B005C4A57 /* TSDKCompletionBlockTypes.h in Headers */ = {isa = PBXBuildFile; fileRef = 960107001BE92DD5005C4A57 /* TSDKCompletionBlockTypes.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -1127,13 +1127,13 @@
 				5645E4A81CD1514B00FCA40B /* TSDKMessageSender.h in Headers */,
 				561BC2791DE4C32D006BCCA1 /* TSDKApnDevice.h in Headers */,
 				9681092E1D8488C600D94C53 /* TSDKCollectionCommand.h in Headers */,
+				56DFC4081E9EBCA7008F5891 /* TSDKMutableDictionary.h in Headers */,
 				9678A3601D86EC4E0078631C /* TSDKLeagueCustomDatum.h in Headers */,
 				964CDDED1BB4519400909D11 /* TSDKPublicFeatures.h in Headers */,
 				969E80C11BAAE7AB00CA518F /* NSString+TSDKConveniences.h in Headers */,
 				969E80FE1BAAE7B500CA518F /* TSDKProfileTimer.h in Headers */,
 				964CDDE91BB4514B00909D11 /* TSDKTslPhotos.h in Headers */,
 				969E80BF1BAAE7AB00CA518F /* NSObject+TSDKIntegerOtNotFound.h in Headers */,
-				56DFC4081E9EBCA7008F5891 /* TSDKMutableDictionary.h in Headers */,
 				96F7C5291D104A920022FA4C /* TSDKMemberPhoto.h in Headers */,
 				9641AC251DF1BCC3008E4716 /* TSDKTslScore.h in Headers */,
 				969E80B11BAAE7AB00CA518F /* TSPCache.h in Headers */,
